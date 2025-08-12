@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Coding Fox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Poppins", "sans-serif";
+            background-color: #dfdbdb;
+            margin: 0;
+            padding: 0;
+             background-image: url('https://media.publit.io/file/China-night.png');
+              background-size: cover; 
+        }
+
+      
+
+        #divStart {
+            background-image: url("https://media.publit.io/file/Hills-and-mountains-night.png");
+            background-size: cover;
+            width: auto;
+            height: 955px;
+        }
+
+        .btnDivStart {
+            width: 12%;
+            height: 45px;
+            border-radius: 12px;
+            border: none;
+            transition: all ease 0.3s;
+            font-size: 20px;
+
+        }
+
+        @keyframes moveUp {
+           0% {
+             transform: translateY(0);
+           }
+           50% {
+             transform: translateY(25px);
+           }
+           100% {
+             transform: translateY(0);
+           }
+        }
+
+        #tutorialBtn:hover {
+            transform: scale(1.05);
+            border: 1px solid white !important;
+            
+        }
+
+
+        #codeInp1::placeholder {
+            color: rgba(0, 0, 0, 0.76);
+            font-weight: 500;
+        }
+
+        #runCodeBtn1:hover {
+            transform: scale(1.15) !important;
+            background-color: rgb(74, 204, 62) !important;
+            cursor: pointer;
+        }
+        
+        .backgroundCellDiv, .wallCellDiv {
+            width: 100%;
+            height: 100%;
+            border: 0.1px solid rgba(0, 0, 0, 0.377);
+            box-sizing: border-box;
+            transition: 0.3s ease all;
+        }	
+
+        .playBtn {
+            width: 7%;
+            height: 37px;
+            background-color: #5add81;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 130px;
+            margin-left: 44px;
+            position: absolute;
+            transition: 0.3s ease all;
+        }
+
+        .playBtn:hover {
+            transform: scale(1.05);
+            background-color: #44b363 !important;
+            cursor: pointer;
+        }
+
+
+        .levelText {
+            font-size: 30px;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+            margin-top: 55px;
+            margin-left: 25px;
+            position: absolute;
+            font-family: "Fontdiner Swanky", serif;
+            letter-spacing: 6px;
+            font-weight: 500;
+        }
+
+        #nextBtn1:hover, #nextBtn2:hover, #nextBtn22:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            background-color: #534c94 !important;
+        }
+        #nextBtn1, #nextBtn2 {
+            transition: 0.3s ease all;
+        }
+
+
+
+        #dialogText1 {
+            animation: op 4s forwards;
+            
+                
+        }
+
+        @keyframes op {
+            from {
+                opacity: 0;
+                
+            }
+            to {
+               opacity: 1;
+            }
+        }
+
+        .buglingImg {
+            animation: buglingG 2s infinite;
+        }
+
+        @keyframes buglingG {
+            0% {
+                transform: scale(0.12);
+            }
+            50% {
+                transform: scale(0.14);
+            }
+            100% {
+                transform: scale(0.12);
+            }
+        }
+
+        @keyframes corruptEnergyG {
+            0% {
+                transform: scale(0.095);
+            }
+            50% {
+                transform: scale(0.115);
+            }
+            100% {
+                transform: scale(0.095);
+            }
+        }
+
+
+        @keyframes gradient {
+            0% {
+                background-position: 100% 0;
+            }
+            50% {
+                background-position: 0 100%;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        #hoverPerformDiv:hover {
+            transform: scale(1.05);
+            filter: blur(1px);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="display: block;" id="divStart">
+       <h2 style="color: white; font-size: 65px; margin-top: 310px; position: absolute; left: 35%; font-family: 'none', serif;
+       "> START GAME</h2>
+        <img style="filter: brightness(640%); position: absolute; margin-left: 630px; margin-top: 150px;" src="https://images.vexels.com/media/users/3/132477/isolated/preview/3b36d6c1705c1902d34a84ba17ee531d-tiny-lines-dots-divider.png" alt="">
+        <p onclick="levelsDivDisplay()" style="color: white; font-size: 30px; font-family: 'none';  margin-left: 780px;
+         margin-top: 485px; position: absolute; font-weight: 300; letter-spacing: 1.5px; animation: moveUp 6s infinite; cursor: pointer;">TAP TO BEGIN</p>
+   
+
+        <button onclick="tutorialDiv.style.display = 'block'" id="tutorialBtn" style="transition: 0.3s ease all; border: 1px solid rgba(255, 255, 255, 0.514); border-radius: 4px; background-color: #21212be7; color: rgba(250, 243, 228, 0.856);
+        width: 20%; height: 60px; font-size: 25px; font-weight: 600; letter-spacing: 2px; margin-left: 700px; margin-top: 700px;
+         font-family: 'Poppins', 'sans-serif'; cursor: pointer;"> Tutorial</button>
+    </div>
+
+
+    <div style="width: 28%; height: 650px; position: absolute; background-color: rgb(26, 26, 26); margin-top: -740px; margin-left: 650px;
+     padding-left: 15px; box-shadow: black 7px 12px 31px 8px; display: none;" id="tutorialDiv">
+        <button onclick="this.parentElement.style.display = 'none'" style="color: white; background-color: red; border-radius: 100%; border: none; position: absolute; width: 25px; height: 25px; margin-left: 515px; 
+        margin-top: -10px; font-size: 18px; cursor: pointer;"> X</button>
+        <p style="color: white; margin-top: 50px; margin-left: 15px;"> This is a game to learn coding, and functions.</p>
+        <p style="color: white; margin-top: 40px; margin-left: 15px; font-size: 23px; font-weight: 600;"> What is a function?</p>
+         <p style="color: white; margin-top: -10px; margin-left: 40px; max-width: 400px;"> A function is a block of code that performs a specific task. It's only executed when it is
+             <span style="font-weight: bold; "><i>called</i></span></p>
+
+             <p style="color: white; margin-top: 40px; margin-left: 15px; font-size: 23px; font-weight: 600;"> How to call a function?</p>
+         <p style="color: white; margin-top: -10px; margin-left: 40px; max-width: 400px;">All functions have different names. To call the function, you only have to put the function's name along with ().
+            <i>eg: moveLeft() <span style="color: #3b4938e7;"> ///Will execute the function called "moveLeft"</span></i> </p>
+
+                   <p style="color: white; margin-top: 40px; margin-left: 15px; font-size: 23px; font-weight: 600;"> What functions exist in the game?</p>
+         <p style="color: white; margin-top: -10px; margin-left: 40px; max-width: 400px;">The basics are: <span style="color: rgb(183, 204, 199);">step() turnRight() turnLeft() turnTop() turnBottom()</span>. There will be more as the game proceeds </p>
+            
+          
+        </div>
+
+
+    <div id="fullContainer1" style="display: none; grid-template-columns: 1fr 1fr; height: 950px; width: 50%; background-color: rgb(0, 0, 0); height: 700px; 
+    margin-left: 480px; margin-top: 100px; box-shadow: black 5px 5px 25px;" >
+    
+        <div id="map1" style="width: 119.8%; background-color: rgb(85, 161, 78); display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); " >
+       
+        </div>
+        <div id="code1" style="width: 80%; background-color: rgb(218, 218, 218); margin-left: 20%; " >
+            <div style="width: 100%; height: 100px; background-color: rgb(192, 192, 192); overflow-x: scroll;  display: grid; grid-template-columns: repeat(8, 1fr); overflow-y: hidden; ">
+              
+              <div onclick="textarea.value += '\n' + 'step()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); 
+               height: 55px; cursor: pointer; ">
+                 <img style="width: 80%; margin-left: 7px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Paw_%28Animal_Rights_symbol%29.svg/768px-Paw_%28Animal_Rights_symbol%29.svg.png" alt="">
+                 <p style="color: rgb(19, 87, 58); margin-top: -15px; text-align: center; font-weight: 500;"> step</p>
+               </div>
+
+                <div onclick="textarea.value += '\n' + 'turnLeft()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); height: 55px; cursor: pointer;">
+                 <img style="width: 75%; margin-left: 7px;" src="https://cdn-icons-png.flaticon.com/512/21/21112.png" alt="">
+                 <p style="color: rgb(19, 87, 58); margin-top: -10px; text-align: center; font-weight: 500;"> turnLeft</p>
+               </div>
+
+                    <div onclick="textarea.value += '\n' + 'turnRight()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); height: 55px; cursor: pointer;">
+                 <img style="width: 75%; margin-left: 7px;" src="https://www.svgrepo.com/show/62915/curve-arrow-pointing-right.svg" alt="">
+                 <p style="color: rgb(19, 87, 58); margin-top: -10px;  font-weight: 500; font-size: 15px ; margin-left: -5px;"> turnRight</p>
+               </div>
+
+                  <div onclick="textarea.value += '\n' + 'turnUp()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); height: 55px; cursor: pointer;">
+                 <img style="width: 75%; margin-left: 7px;" src="https://cdn1.iconfinder.com/data/icons/ios-and-android-glyphs-set-4/52/up__curved__direction__arrow-512.png" alt="">
+                 <p style="color: rgb(19, 87, 58); margin-top: -10px; text-align: center; font-weight: 500;"> turnUp</p>
+               </div>
+
+                <div onclick="textarea.value += '\n' + 'turnDown()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); height: 55px; cursor: pointer;">
+                 <img style="width: 75%; margin-left: 7px;" src="https://cdn-icons-png.flaticon.com/512/21/21178.png" alt="">
+                 <p style="color: rgb(19, 87, 58); margin-top: -10px; font-weight: 500;  font-size: 15px ; margin-left: -5px;"> turnDown</p>
+               </div>
+
+               <div id="addLineToCodeDrainBtn" onclick="textarea.value += '\n' + 'drain()'" style="border-radius: 20px; width: 60px; border: 1px solid rgb(17, 17, 17); padding: 10px; transform: scale(0.8); background-color: rgb(239, 246, 250); height: 55px; cursor: pointer; display: none;">
+                <img style="width: 75%; margin-left: 7px;" src="https://cdn-icons-png.flaticon.com/512/1825/1825451.png" alt="">
+                <p style="color: rgb(19, 87, 58); margin-top: -10px; font-weight: 500;  font-size: 15px; text-align: center;"> drain</p>
+              </div>
+            </div>
+
+            <input id="codeInp1" placeholder="Code" type="text" style="width: 65%; height: 40px;  border-radius: 8px; border: 1px solid black; 
+            margin-left: 10px; margin-top: 20px ; padding-left: 10px; font-family: 'Poppins', 'sans-serif'; letter-spacing: 0.7px;">
+
+             <button onclick="addLineToCode()" style="background-color: #5add81; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black;
+             font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; margin-left: 25px; cursor: pointer; "> ADD</button>
+
+
+             <textarea placeholder="/// Or write here"  style="resize: none; width: 96.5%; height: 440px;  margin-top: 20px; padding-left: 5px; font-size: 16px;" id="textarea"></textarea>
+             <button onclick="runCodeFn()" id="runCodeBtn1" style="border-radius: 8px; background-color: rgb(47, 212, 135); color: white; font-family: 'Poppins', 'sans-serif';
+             border: none; width: 25%; height: 35px; transform: scale(1.1); font-size: 18px; letter-spacing: 0.7px; margin-left: 135px; margin-top: 5px;
+             transition: all 0.3s ease;">RUN</button>
+             <p style="font-size: 13px; color: rgb(85, 85, 85); position: absolute; margin-top: -1px; margin-left: 143px;  "> CTRL + ENTER</p>
+             <p style="font-size: 15px; color: rgb(85, 85, 85); position: absolute; margin-top: -1px; margin-left: 8px;  "> LEVEL: <span id="userCurrentLevel">1</span></p>
+        </div>
+    </div>
+
+    <div id="levelsDiv" style="display: none; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0); position: absolute; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1fr 1fr 1fr; ">
+      <h2 style="color: white; font-size: 65px; margin-top: 5px; position: absolute; left: 15%; font-family: 'none', serif;
+       "> When Silence First Cracked</h2>
+        <i style="position: absolute; font-family: 'none'; font-size: 22px; color: white; margin-top: 90px; margin-left: 330px; -webkit-text-stroke: 0.3px black;"> The world feels familiar… but something is broken. — the first sign of The Merge</i>
+      <div style="width: 70%; background-color: #d1d1d100; height: 200px; margin-left: 15%; margin-top: 45%; border-radius: 10px; box-shadow: black 5px 5px 25px;
+        background-image: linear-gradient(to bottom, rgb(112, 184, 154), rgb(90, 149, 153));">
+                <p style="position: absolute; margin-top: 4px; margin-left: 10px; font-size: 12px;">  Function calling</p>
+               <p class="levelText">LEVEL 1</p>
+                <button onclick="playLevel1()" class="playBtn">PLAY</button>
+        </div>
+        <div style="width: 70%; background-color: #d1d1d100; height: 200px; margin-left: 15%; margin-top: 45%; border-radius: 10px; 
+        box-shadow: black 5px 5px 25px; background-image: linear-gradient(to bottom, rgb(110, 152, 201), rgb(101, 96, 179));">
+            <p style="position: absolute; margin-top: 4px; margin-left: 10px; font-size: 12px;">  Parameters</p>
+            <p class="levelText">LEVEL 2</p>
+            <button onclick="playLevel2()" id="playBtn2" disabled class="playBtn">PLAY</button>
+        </div>
+        <div style="width: 70%; background-color: #d1d1d100; height: 200px; margin-left: 15%; margin-top: 45%; border-radius: 10px;
+         box-shadow: black 5px 5px 25px; background-image: linear-gradient(to bottom, rgb(120, 106, 160), rgb(145, 84, 135));">
+                <p style="position: absolute; margin-top: 4px; margin-left: 10px; font-size: 12px;">  drain()</p>
+                <p class="levelText">LEVEL 3</p>
+                <button onclick="playLevel3()" disabled id="playBtn3" class="playBtn">PLAY</button>
+        </div>
+        <div style="width: 70%; background-color: #d1d1d100; height: 200px; margin-left: 15%; margin-top: 45%; border-radius: 10px; 
+        box-shadow: black 5px 5px 25px; background-image: linear-gradient(to bottom, rgb(184, 111, 111), rgb(163, 119, 89));">
+            <p class="levelText">LEVEL 4</p>
+                <button onclick="playLevel4()" id="playBtn4" disabled class="playBtn">PLAY</button>
+        </div>
+    </div>
+
+    <dialog id="dialog1" style="width: 35%; height: 145px; background-color: rgb(161, 176, 194); position: absolute; display: none; margin-top: 420px; 
+    margin-left: 505px; border-radius: 8px; box-shadow: black 5px 5px 25px;">
+
+            <p id="nameDialog1" style="color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 275px; position: absolute;  "> Unknown</p>
+            <img style="width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; " src="https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png" alt="">
+            <p id="dialogText1" style="font-size: 19px; "> A long time ago, there were 12 realms. One of them - our own - was The Never Realm. </p>
+            <button id="nextBtn1" onclick="changeDialog(0)" style="background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black;
+            font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; margin-left: 550px; cursor: pointer; margin-top: -5px; "> NEXT</button>
+            <img id="theWiseOneStudent" style="position: absolute; margin-top: -270px; margin-left: -1100px; transform: rotateY(180deg) scale(0.95); " src="https://i.ibb.co/d4PZqx13/the-Wise-One.png" alt="fassf">
+  
+        </dialog>
+
+    <script>
+
+    let codeGlossary = {
+        step: "step()",
+        left: "turnLeft()",
+        right: "turnRight()",
+        up: "turnUp()",
+        down: "turnDown()",
+        drain: "drain()"
+
+    }
+
+    
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        function sleep2(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+    
+        function changeDialog(text) {
+           
+           let aT = [ "It was kept in balance by 7 ancient Dragon Cores. Each one held the power of a Source Dragon:  Motion, Energy, Life, Strength, Flow, Unity, and Balance. They were made to be impossible to break or move out of place with any of this world's power.",
+        "But everything changed after The Merge. Barriers between realms shattered — and deep world secrets began to surface. Now, the Dragon Cores have somehow vanished. And with them gone… the very fabric of reality is starting to collapse.", 
+        "You have been chosen by The Wise One to find out the cores' whereabouts, and bring them back, before it's too late.",
+        "I am The Wise One's first student. I can't go with you, but I'll give you a map and I'll send you my pet soon, who will guide you.",
+        "Good luck. The existence as you know it is at stake. Your first trip begins in the Never Realm.  To enter or leave any city in any realm, you need to pass a code barrier. Your first code barrier starts now."]
+
+            
+         nextBtn1.style.marginTop = "-250px"
+        if(text == 0) {
+            nextBtn1.addEventListener("click", () => {
+                changeDialog(1)
+            })
+        }
+        else if(text == 1) {
+            nextBtn1.addEventListener("click", () => {
+                changeDialog(2)
+            })
+        }
+        else if(text == 2) {
+            nextBtn1.addEventListener("click", () => {
+                nameDialog1.textContent = "The Wise One's Student"
+                nameDialog1.style.marginLeft = "200px"
+                changeDialog(3)
+            })
+
+        }
+        else if(text == 3) {
+            nextBtn1.addEventListener("click", () => {
+                changeDialog(4)
+            })
+        }
+        else if(text == 4) {
+            nextBtn1.addEventListener("click", () => {
+            dialog1.style.display = "none"
+
+            let imgNode = document.createElement("img")
+            imgNode.src = "https://i.ibb.co/RGS4pphj/hbMaster.png"
+            imgNode.style = "width: 35%; position: absolute; margin-top: -275px; margin-left: -5px; transform: rotateY(180deg); "
+
+            let dialogNode = document.createElement("div")
+            dialogNode.style = "width: 15%; height: 135px; position: absolute;  margin-top: -420px; margin-left: 290px; background-color: #a1b0c2; border-radius: 10px;"
+            dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> Hi. I'm the pet of your Master. You can call me Badger.</p>"
+            let nextBtn = document.createElement("button")
+            nextBtn.innerHTML = "NEXT"
+            nextBtn.style = "width: 30%; height: 30px; position: absolute; margin-top: 15px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+            nextBtn.addEventListener("click", () => {
+                dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> To protect your true identity and move easier between realms, the system will visualize you as an animal.</p>"
+                nextBtn.remove();
+                let nextBtn2 = document.createElement("button")
+                nextBtn2.innerHTML = "NEXT"
+                nextBtn2.style = "width: 30%; height: 30px; position: absolute; margin-top: -40px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                dialogNode.appendChild(nextBtn2)
+                nextBtn2.addEventListener("click", () => {
+                    dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> Your goal is to reach the apple by writing functions. You can write them directly, or just click the buttons on the right top.</p>"
+                    nextBtn2.remove();
+                    let nextBtn3 = document.createElement("button")
+                    nextBtn3.innerHTML = "NEXT"
+                    nextBtn3.style = "width: 30%; height: 30px; position: absolute; margin-top: -10px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                    dialogNode.appendChild(nextBtn3)
+                    nextBtn3.addEventListener("click", () => {
+                    dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'>You write functions by: writing their name followed by (). Hint: In this level, you only need turnLeft(), turnUp(), step()</p>"
+                    nextBtn3.remove();
+                    let nextBtn4 = document.createElement("button")
+                    nextBtn4.innerHTML = "NEXT"
+                    nextBtn4.style = "width: 30%; height: 30px; position: absolute; margin-top: -20px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                    dialogNode.appendChild(nextBtn4)
+                    nextBtn4.addEventListener("click", () => {
+                        dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'>Start off by clicking on the Green area to generate the map. Avoid the bugling!</p>"
+                        nextBtn4.remove();
+                        let nextBtn5 = document.createElement("button")
+                        nextBtn5.innerHTML = "CLOSE"
+                        nextBtn5.style = "width: 30%; height: 30px; position: absolute; margin-top: -10px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                        dialogNode.appendChild(nextBtn5)
+                        nextBtn5.addEventListener("click", () => {
+                            dialogNode.remove();
+                            imgNode.remove();
+                        })
+                })
+                })
+            })
+            })
+            
+            dialogNode.appendChild(nextBtn)
+            document.body.appendChild(dialogNode)
+            document.body.appendChild(imgNode)
+
+            let divNode = document.createElement("div")
+            divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1.5s ease; opacity: 1;"
+            document.body.appendChild(divNode)
+            setTimeout(() => {
+                divNode.style.width = "100%"
+                divNode.style.height = "100%"
+            }, 100);
+            
+          setTimeout(() => {
+            divNode.style.opacity = "0"
+            setTimeout(() => {
+                fullContainer1.style.display = "grid"
+                let divNode2 = document.createElement("div")
+                divNode2.style = "width: 25%; height: 250px; position: absolute; display: grid; grid-template-columns: repeat(7, 1fr); margin-top: -700px; margin-left: -10px"
+                divNode2.innerHTML = "<img src=''> "
+                
+                document.body.appendChild(divNode2)
+                let amountsCellsAdd = 0
+                document.getElementById("map1").addEventListener("click", () => {
+                    let imgNode = document.createElement("img")
+                    imgNode.src = "https://i.ibb.co/RGS4pphj/hbMaster.png"
+                    imgNode.style = "width: 35%; position: absolute; margin-top: -275px; margin-left: -5px; transform: rotateY(180deg); "
+
+                    let dialogNode = document.createElement("div")
+                    dialogNode.style = "width: 15%; height: 135px; position: absolute;  margin-top: -420px; margin-left: 290px; background-color: #a1b0c2; border-radius: 10px;"
+                    dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> Hi. I'm the pet of your Master. You can call me Badger.</p>"
+                    let nextBtn = document.createElement("button")
+                    nextBtn.innerHTML = "NEXT"
+                    nextBtn.style = "width: 30%; height: 30px; position: absolute; margin-top: 15px; margin-left: 155px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                 
+                    nextBtn.addEventListener("click", () => {
+                        dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> To protect your true identity and move easier between realms, the system will visualize you as an animal.</p>"
+                        nextBtn.addEventListener("click", () => {
+                            dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'> Your goal is to reach the apple by writing functions. You can write them directly, or just click the buttons on the right top.</p>"
+                            nextBtn.addEventListener("click", () => {
+                            dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'>You write functions by: writing their name followed by (). Hint: In this level, you only need turnLeft(), turnUp(), step()</p>"
+                            nextBtn.addEventListener("click", () => {
+                                dialogNode.innerHTML = "<p style='font-size: 17px; margin-top: 10px; margin-left: 10px;'>Start off by clicking on the Green area to generate the map. Avoid the bugling!.</p>"
+                                nextBtn.addEventListener("click", () => {
+                                    dialogNode.remove();
+                                    imgNode.remove();
+                                })
+                        })
+                        })
+                    })
+                    })
+                    userCurrentLevel.textContent == 1
+                        if(amountsCellsAdd == 0) {
+                            for(let i = 0; i < 64; i++) {  
+                                let divNode = document.createElement("div")
+                                divNode.setAttribute("class", "backgroundCellDiv")
+                                if(i == 60) {
+                                    divNode.innerHTML = `<img id="hbImg1" style="transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/v6gP0Ktf/hb.png">`
+                                }
+                                if( validValues.includes(i)) {
+                                    divNode.setAttribute("class", "wallCellDiv")
+                                }
+                            
+                        
+                                if( i == 43) {
+                                    divNode.innerHTML = `<img id="appleImg1" style="transform: scale(0.12); position: absolute; margin-left: -220px; margin-top: -300px; transition: all 0.2s ease;" alt="r" src="https://cdn-icons-png.flaticon.com/512/8953/8953531.png">`
+                                }
+                                if(i == 52) {
+                                    divNode.innerHTML = `<img class="buglingImg" style="transform: scale(0.12); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/rGRJHNQB/bugling.png">`
+                                }
+                            
+                            
+                            
+                            
+                                map1.appendChild(divNode);
+                            }
+                        }
+                        amountsCellsAdd++
+                })
+            }, 700);
+            setTimeout(() => {
+                divNode.remove()
+            }, 1000);
+          }, 2200);
+
+          
+            })
+        }
+
+      
+        dialogText1.innerHTML = aT[text]
+        return text + 1
+    }
+
+        function playLevel1() {
+            let divNode = document.createElement("div")
+            divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1s ease; opacity: 1;"
+            document.body.appendChild(divNode)
+            setTimeout(() => {
+                divNode.style.width = "100%"
+                divNode.style.height = "100%"
+            }, 100);
+            
+          setTimeout(() => {
+            divNode.style.opacity = "0"
+            setTimeout(() => {
+                divNode.remove()
+            }, 1000);
+          }, 2000);
+
+        setTimeout(() => {
+            dialog1.style.display = "block";
+            levelsDiv.style.display = "none";
+        }, 2000);
+        }
+
+        function levelsDivDisplay() {
+            levelsDiv.style.display = "grid";
+            divStart.style.display = "none";  
+        }
+
+ 
+
+       function addLineToCode() {
+        document.getElementById("textarea").value =  document.getElementById("textarea").value + "\n"  + document.getElementById("codeInp1").value ;
+        document.getElementById("codeInp1").value = "";
+    }
+
+
+        const rightBorder = [7, 15, 23, 31, 39, 47, 55, 63];
+        const leftBorder = [0, 8, 16, 24, 32, 40, 48, 56];
+        const topBorder = [0, 1, 2, 3, 4, 5, 6, 7];
+        const bottomBorder = [56, 57, 58, 59, 60, 61, 62, 63];
+
+        const validValues = [...rightBorder, ...leftBorder, ...topBorder, ...bottomBorder];
+     
+        let currentPosition = 60
+
+       async function runCodeFn() {
+            let ifConditionVar = false
+            let wasLevel3KeyReached = false;
+
+            let buglingWasReached = false;
+
+            switch(Number(userCurrentLevel.textContent)) {
+                case 1:
+                      currentPosition = 60
+                break;
+                case 2: 
+                     currentPosition = 63
+                break;
+                case 3: 
+                    currentPosition = 63;
+                    appleImg2.style.display = "block"
+                    appleImg2.style.transform = "scale(0.12)"
+                    document.querySelectorAll(".backgroundCellDiv").forEach(div => {
+                        const child = div.firstElementChild;    
+                    if (child && child.getAttribute("src")?.includes("corrupt-En")) {
+                        child.style.display = "block";
+                        div.style.backgroundColor = "#b33c62"
+                    }
+                    });
+                break;
+                case 4:
+                    currentPosition = 51;
+                    appleImg2.style.display = "block"
+                    appleImg2.style.transform = "scale(0.12)"
+                    document.querySelectorAll(".backgroundCellDiv").forEach(div => {
+                        const child = div.firstElementChild;    
+                    if (child && child.getAttribute("src")?.includes("corrupt-En")) {
+                        child.style.display = "block";
+                        div.style.backgroundColor = "#b33c62"
+                    }
+                   });
+                break;
+            }
+          
+          
+            let codeLines = document.getElementById("textarea").value.split("\n"); // Starting position of the fox
+            
+            hbImg1.style = "transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;"
+        
+            for(let i = 0; i < codeLines.length; i++) {
+               
+              let codeLine = codeLines[i].trim();
+              if(ifConditionVar == false) {
+                if(codeLine.trim() === codeGlossary.left) {
+                hbImg1.style.transform = "scale(0.15) rotate(-90deg)";
+            }
+                else if(codeLine.trim() === codeGlossary.right) {
+                    hbImg1.style.transform = "scale(0.15) rotate(90deg)";
+                }
+                else if(codeLine.trim() === codeGlossary.down) {
+                    hbImg1.style.transform = "scale(0.15) rotate(180deg)";
+                }
+                else if(codeLine.trim() === codeGlossary.up) {
+                    hbImg1.style.transform = "scale(0.15) rotate(0deg)";
+                }
+                else if(codeLine.trim().startsWith("step(") && codeLine.trim().endsWith(")")) {
+                    function stepFn() {
+                        if(hbImg1.style.transform.includes("rotate(-90deg)") ) {
+                            if( !leftBorder.includes(currentPosition)) {
+                                currentPosition = currentPosition - 1;
+                            hbImg1.style.marginLeft = (Number(hbImg1.style.marginLeft.replace("px", "")) - 70) + "px"
+                            }
+
+                            
+                        }
+                        else if(hbImg1.style.transform == "scale(0.15) rotate(90deg)") {
+                            if( !rightBorder.includes(currentPosition)) {
+                                currentPosition = currentPosition + 1
+                                hbImg1.style.marginLeft = (Number(hbImg1.style.marginLeft.replace("px", "")) + 70) + "px"
+                            }
+                        }
+                        else if(hbImg1.style.transform == "scale(0.15) rotate(180deg)") {
+                            if(!bottomBorder.includes(currentPosition)) {
+                                currentPosition = currentPosition + 8
+                                hbImg1.style.marginTop = (Number(hbImg1.style.marginTop.replace("px", "")) + 87) + "px"
+                            }                    
+                        }
+                        else if(hbImg1.style.transform == "scale(0.15) rotate(0deg)") {
+                            if(!topBorder.includes(currentPosition)) {
+                                currentPosition = currentPosition - 8
+                                hbImg1.style.marginTop = (Number(hbImg1.style.marginTop.replace("px", "")) - 87) + "px"
+                            }
+                        }               
+                        else {
+                            if(!topBorder.includes(currentPosition)) {
+                                currentPosition = currentPosition - 8
+                                hbImg1.style.marginTop = (Number(hbImg1.style.marginTop.replace("px", "")) - 87) + "px"
+                            }
+                        }
+                        if (checkIfBuglingIsReached()) {
+                        if(userCurrentLevel.textContent == 3)  {
+                            if(codeLines[i + 1]) {
+                            if(codeLines[i + 1].trim() != "drain()") {
+                                buglingWasReached = true;
+                                alert("You've been caught!");
+                                return;
+                            }
+                            else if( codeLines[i + 1].trim() == "drain()") {
+                                buglingWasReached = false;
+                            }
+                        }
+                        else if(!codeLines[i + 1]) {
+                                buglingWasReached = true;
+                                alert("You've been caught!");
+                                return;
+                        }
+                        
+                            }
+                        else {
+                            buglingWasReached = true;
+                            alert("You've been caught!");
+                            return;
+                        }
+                        }
+
+
+                    }     
+                    stepFn()
+
+                        let stepParameter = Number(codeLine.split("(")[1].split(")")[0])
+                        for(let i = 0; i < stepParameter - 1; i++) {
+                            stepFn()
+                            await sleep(100);
+                        }
+                }
+                else if(codeLine.trim() === codeGlossary.drain) {
+                   function drain() {
+                document.querySelectorAll(".backgroundCellDiv").forEach(div => {
+                  if(div.getAttribute("id") == currentPosition) {
+                     const child = div.firstElementChild;
+                     if (child) {
+                    if(child.getAttribute("src") == "https://i.ibb.co/jk4n1ypY/corrupt-En.png") {
+                     child.style.display = "none";
+                     div.style.backgroundColor = "rgb(85, 161, 78)"
+                    }
+                   }
+                 }
+                  });
+               }
+                 drain()
+            }
+             }         
+              
+              if(codeLine.trim().startsWith("if(") && codeLine.includes("){")) {
+                ifConditionVar = true
+                let ifCondition = codeLine.split("(")[1].replaceAll(' ', '')
+                async function allFunctions(insideLine) {
+                            if(insideLine === "drain()") {
+                                function drain() {
+                                    document.querySelectorAll(".backgroundCellDiv").forEach(div => {
+                                    if(div.getAttribute("id") == currentPosition) {
+                                        const child = div.firstElementChild;
+                                        if (child) {
+                                        if(child.getAttribute("src") == "https://i.ibb.co/jk4n1ypY/corrupt-En.png") {
+                                        child.style.display = "none";
+                                        div.style.backgroundColor = "rgb(85, 161, 78)"
+                                        }
+                                    }
+                                    }
+                                });
+                            }
+
+                            drain()
+                            }
+                            else if(insideLine.startsWith("step(") && insideLine.endsWith(")")) {
+                            stepFn()  
+                            let stepParameter = Number(codeLine.split("(")[1].split(")")[0])
+                            for(let i = 0; i < stepParameter - 1; i++) {
+                                stepFn()
+                                await sleep(100);
+                            }
+                         }
+                            else if(insideLine === "turnUp()") {
+                            hbImg1.style.transform = "scale(0.15) rotate(0deg)";
+                         }
+                            else if(insideLine === "turnDown()") {
+                            hbImg1.style.transform = "scale(0.15) rotate(180deg)";
+                         }
+                            else if(insideLine === "turnLeft()") {
+                            hbImg1.style.transform = "scale(0.15) rotate(-90deg)";
+                         }
+                            else if(insideLine === "turnRight()") {
+                             hbImg1.style.transform = "scale(0.15) rotate(90deg)";
+                         }      
+                         }
+                         
+               if(ifCondition === "position==corrupted){") {
+                    if(document.getElementById(currentPosition).innerHTML) {
+                        if( document.getElementById(currentPosition).firstElementChild &&
+                             document.getElementById(currentPosition).firstElementChild.src.includes("corrupt-En")) {
+                            for (let k = i + 1; k < codeLines.length; k++) {
+                         let insideLine = codeLines[k].replace(/\s+/g, '');
+                         if(insideLine == "else{") {
+                            break;
+                        }             
+                        for(let l = 1; l<50; l++) {
+                            if(codeLines[i + l].replace(/\s+/g, '') != "else{") {
+                                allFunctions(codeLines[i + l].trim())
+                                await sleep2(150)
+                            }
+                            else {
+                                break;
+                            }
+                        }        
+                         k = k + 1
+
+                        }
+                        }
+                      
+                        else {
+                            elseStatementFn()
+                        }
+                    }              
+                       
+                    }
+                    async function elseStatementFn() {
+                        for (let k = i + 1; k < codeLines.length; k++) {
+                         let insideLine = codeLines[k].replace(/\s+/g, '');
+                         if(insideLine == "}") {
+                            break;
+                        }             
+                        for(let l = 1; l<50; l++) {
+                            if(codeLines[i + l].replace(/\s+/g, '') != "}") {
+                                allFunctions(codeLines[i + l].trim())
+                                await sleep2(150)
+                            }
+                            else {
+                                break;
+                            }
+                        }        
+                         k = k + 1
+
+                        }
+                    }
+                
+            }          
+              console.log(currentPosition)
+        
+              checkIfAppleIsReached()
+              await sleep(450);
+
+            }
+
+      
+
+        function checkIfAppleIsReached() {  
+            if (buglingWasReached) return;
+            if(userCurrentLevel.textContent == 1) {
+                    if(currentPosition == 35 && checkIfBuglingIsReached() == false) {
+                        appleImg1.style.transform = "scale(0.02)"
+                       setTimeout(() => {
+                        passLevelDialog()
+                       }, 1500);
+                    }
+                
+                }
+            else if(userCurrentLevel.textContent == 2 )  {
+                if(codeLines.length <= 6 ) {
+                     if(currentPosition == 47 && !buglingWasReached) {
+                        appleImg1.style.transform = "scale(0.02)"
+                        setTimeout(() => {
+                                passLevelDialog()
+                            }, 1500);
+                            
+                        }
+                    }
+                    else { wrongLinesDialog("7")}
+                }
+            else if(userCurrentLevel.textContent == 3) {
+                if(codeLines.length <= 8)  {
+                    if(currentPosition == 56) {
+                   appleImg2.style.transform = "scale(0.02)"
+                   setTimeout(() => {
+                      appleImg2.style.display = "none"
+                   }, 500);
+                   wasLevel3KeyReached = true;
+                }
+                if(currentPosition == 9) {
+                    if(wasLevel3KeyReached && !buglingWasReached) {
+                        appleImg1.style.transform = "scale(0.02)"
+                        setTimeout(() => {
+                                passLevelDialog()
+                        }, 1500);
+                     }
+                    }
+                }
+                else { wrongLinesDialog("8")}
+
+            }
+            }
+        function checkIfBuglingIsReached() {
+        if(userCurrentLevel.textContent == 1) {
+            if(currentPosition == 52) {
+                hbImg1.style = "transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;"
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(userCurrentLevel.textContent == 2) {
+            let buglingDiv = [55, 54, 53, 52]
+            if(buglingDiv.includes(currentPosition)) {
+                hbImg1.style = "transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;"
+                buglingWasReached = true;
+                currentPosition = 0
+                return true;
+            }
+            else {
+                buglingWasReached = false;
+                return false;
+            }
+        }   
+        else if(userCurrentLevel.textContent == 3) {
+            let energyDiv = [61, 53, 54, 55]
+            if(energyDiv.includes(currentPosition)) {
+               buglingWasReached = true;
+               return true;
+            }
+           
+        }
+    }
+   
+       }
+
+
+
+
+
+    let buttons = document.querySelectorAll("button")
+    buttons.forEach(b => {
+        if(b.disabled) {
+            b.style.filter = "brightness(60%)"
+            b.style.cursor = "not-allowed"
+        }
+    })
+   
+    function passLevelDialog() {
+        let divNode = document.createElement("div")
+        divNode.style = "width: 15%; background-color: #3be47c; height: 120px; position: absolute; transition: all 0.4s ease; margin-left: 35%; margin-top: -400px; border-radius: 6px; border: 1px solid black; transform: scale(0)"
+        divNode.innerHTML = "<p style='font-size: 23px; color: white; font-weight: 500;'>You've passed the level!</p>"
+        document.body.appendChild(divNode)
+        setTimeout(() => {
+            divNode.style.transform = "scale(1)"
+        }, 10);
+        setTimeout(() => {
+            divNode.style.transform = "scale(0)"
+            setTimeout(() => {
+                divNode.remove()
+                if(Number(localStorage.getItem("userLevelCODING")) > userCurrentLevel.textContent) {
+                    alert(localStorage.getItem("userLevelCODING"))
+                }
+                else {
+                    if(Number(localStorage.getItem("userLevelCODING")) == 0) {
+                           localStorage.setItem("userLevelCODING", 2)
+                    }
+                    else {
+                        localStorage.setItem("userLevelCODING", (Number(localStorage.getItem("userLevelCODING")) + 1) || 2)
+                    }
+                    alert(localStorage.getItem("userLevelCODING"))
+                }
+                location.reload()
+            }, 450);
+        }, 2500);
+       
+    }
+
+    function wrongLinesDialog(a) {
+        let divNode = document.createElement("div")
+        divNode.style = "width: 15%; background-color: #ea3838; height: 120px; position: absolute; transition: all 0.4s ease; margin-left: 35%; margin-top: -400px; border-radius: 6px; border: 1px solid black; transform: scale(0)"
+        divNode.innerHTML = "<p class='wrongLinesDialogText' style='font-size: 23px; color: white; font-weight: 500;'></p>"
+
+       setTimeout(() => {
+        document.body.appendChild(divNode)
+        document.querySelectorAll(".wrongLinesDialogText").forEach(p => {
+            p.textContent = "Your code must be less than " + a + " lines. Empty lines do count"
+        })
+
+       }, 500);
+        setTimeout(() => {
+            divNode.style.transform = "scale(1)"
+        }, 10);
+        setTimeout(() => {
+            divNode.style.transform = "scale(0)"  
+            divNode.remove()       
+        }, 2500);
+       
+    }
+    
+    function playLevel2() {
+
+        let dialogNode = document.createElement("dialog")
+          dialogNode.style = "width: 35%; height: 145px; background-color: rgb(161, 176, 194); position: absolute; display: block; margin-top: 420px; margin-left: 505px; border-radius: 8px; box-shadow: black 5px 5px 25px;"
+          dialogNode.innerHTML = "<p style='color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 285px; position: absolute;  '> Badger</p>"
+          dialogNode.innerHTML += "<img style='width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; ' src='https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png' alt=''>"
+          dialogNode.innerHTML += "<p id='dialogText2' style='font-size: 19px; '> That was amazing! Our journey still continues at the Never Realm. I've got you a map of half of the Merged Realms to help you visualize our goal. Since The Merge ocurred recently, it's really hard to even get half one </p>"
+          dialogNode.innerHTML += "<button id='nextBtn2' style='background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 18px;  letter-spacing: 0.7px; margin-left: 550px; cursor: pointer; margin-top: -5px; '> SEE</button>"
+          dialogNode.innerHTML += "<img style='position: absolute; margin-top: -350px; margin-left: -560px; transform: rotateY(180deg) scale(0.42); ' src='https://i.ibb.co/ZzW8Bmzt/hbImg2.png' alt='fassf'>"
+
+        let divNode = document.createElement("div")
+            divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1s ease; opacity: 1;"
+            document.body.appendChild(divNode)
+            setTimeout(() => {
+                divNode.style.width = "100%"
+                divNode.style.height = "100%"
+            }, 100);
+            
+          setTimeout(() => {
+            divNode.style.opacity = "0"
+            setTimeout(() => {
+                divNode.remove()
+            }, 1000);
+          }, 2000);
+
+        setTimeout(() => {
+            levelsDiv.style.display = "none";
+           setTimeout(() => {
+            document.body.appendChild(dialogNode)
+           }, 450);
+
+        }, 2000);
+        
+        setTimeout(() => {
+            nextBtn2.addEventListener("click", () => {
+                dialogNode.innerHTML = "<p style='color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 285px; position: absolute;  '> Badger</p>"
+                dialogNode.innerHTML += "<img style='width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; ' src='https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png' alt=''>"
+                dialogNode.innerHTML += "<p id='dialogText2' style='font-size: 19px; '> That was amazing! Our journey still continues at the Never Realm. I've got you a map of half of the Merged Realms to help you visualize our goal. Since The Merge ocurred recently, it's really hard to even get half one </p>"
+                dialogNode.innerHTML += "<img style='position: absolute; margin-top: -350px; margin-left: -560px; transform: rotateY(180deg) scale(0.42); ' src='https://i.ibb.co/ZzW8Bmzt/hbImg2.png' alt='fassf'>"
+
+            let imgNode = document.createElement("img")
+            imgNode.style = "width: 1%; position: absolute; margin-top: -75px; margin-left:225px; transition: all 0.4s ease;"
+            imgNode.src = "https://i.ibb.co/27qwbt0T/merged-Realms-Map1.png"
+            dialogNode.appendChild(imgNode)
+            setTimeout(() => {
+                imgNode.style.width = "90%"
+                imgNode.style.marginLeft = "70px"
+                imgNode.style.marginTop = "-250px"
+                imgNode.style.transform = "scale(1.55)"
+                setTimeout(() => {
+                    imgNode.style.transform = "scale(0.05) rotate(180deg)"
+                    setTimeout(() => {
+                        imgNode.remove()
+                        dialogText2.textContent = "I'll try to get you a better one soon. Now, let me tell you more about what was The Merge";
+                        dialogNode.innerHTML += "<button id='nextBtn22' style='background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 18px;  letter-spacing: 0.7px; margin-left: 420px; margin-top: 55px; transition: all 0.3s ease; '> NEXT</button>"
+                         dialogText2.style.fontSize = "18px"
+                        setTimeout(() => {
+                            nextBtn22.addEventListener("click", () => {
+                                dialogText2.textContent = "Not long ago, there were 12 realms, and the only possible way to travel between them, was through a special portal located underground. There was 1 portal for each realm."
+                                nextBtn22.addEventListener("click", () => {
+                                    dialogText2.textContent = 'I remember we were about to begin a new adventure. My team and I hadn’t even boarded the ship when suddenly, the entire sky turned black. A blood-red rift tore open above us, pulling and ejecting everything around it. In just 20 seconds, the sky was full of these terrifying red portals.'
+                                    nextBtn22.addEventListener("click", () => {
+                                        dialogText2.textContent = 'I managed to regroup with my team and our master. But before we could make sense of anything, a violent gust of wind dragged us all into one of the portals. It wasn’t just us — people from every realm were getting pulled in too.'
+                                        nextBtn22.addEventListener("click", () => {
+                                            dialogText2.textContent = 'The last thing I remember is getting flashbacks from a conversation I had with my master just a few days before all this. He seemed deeply troubled about something he called The Coalescence. He warned me, "Only together can we survive." He believed it was an event meant to happen thousands of years in the future — but somehow, it happened that day.'
+                                           
+                                        nextBtn22.addEventListener("click", () => {
+                                            dialogText2.textContent = 'Now I see that "The Coalescence" was actually the old prophesied name for The Merge. The day where all the realms merged together into one.'
+                                            nextBtn22.addEventListener("click", () => {
+                                                    dialogText2.textContent = 'When I woke up, I was in my origin realm, The Never Realm. Or at least, what was left of it, I didn\' know what had happened. After exploring for a while, I found one of my teammates. Neither of us knew anything of what happened after the last time we saw each other.'
+                                                    nextBtn22.addEventListener("click", () => {
+                                                        dialogText2.textContent = 'Less than a month has passed since The Merge. We have already accustomed to all the realms being merged into one. But the union of the realms. is unstable. That instability causes what we now call MergeQuakes.'
+                                                        nextBtn22.addEventListener("click", () => {
+                                                            dialogText2.textContent = 'The MergeQuakes are when 2 realms attempt to share the same area, and they cause a small Merge, that only affects the surroundings, but it\'s still fatal. They can happen anywhere at anytime. But, don\'t worry, as of now, they don\'t seem to be happening often. But you should know:'
+                                                            nextBtn22.addEventListener("click", () => {
+                                                                dialogText2.textContent = 'The only way to stop MergeQuakes is by using pure energy — and that only comes from Dragon Cores or directly from the Source Dragons. Since they appear to have shattered or dissapeared after The Merge, there\'s no current way to stop them. That\'s why your mission is extremely important.'
+                                                                nextBtn22.addEventListener("click", () => {
+                                                                    dialogText2.textContent = 'Your next journey continues in the Never Realm. I\'ll go with you. We don\'t know what happened to the Dragon Cores. Maybe the only way to get them back is to contact the Source Dragons to create new ones. Let\'s go.'
+                                                                    nextBtn22.addEventListener("click", () => {
+                                                                        dialogNode.remove()
+                                                                        setTimeout(() => {
+                                                                            document.body.style.backgroundImage = "url('https://png.pngtree.com/background/20230417/original/pngtree-winter-woods-snow-scene-illustration-picture-image_2445808.jpg')"
+                                                                             document.body.style.backgroundPositionY = "-120px"
+                                                                        }, 1525);
+
+                                                                        let divNode = document.createElement("div")
+                                                                        divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1.5s ease; opacity: 1;"
+                                                                        document.body.appendChild(divNode)
+                                                                        setTimeout(() => {
+                                                                            divNode.style.width = "100%"
+                                                                            divNode.style.height = "100%"
+                                                                        }, 100);
+                                                                        
+                                                                    setTimeout(() => {
+                                                                        divNode.style.opacity = "0"
+                                                                        setTimeout(() => {
+                                                                            fullContainer1.style.display = "grid"
+                                                                            userCurrentLevel.textContent = 2
+                                                                            let imgNode = document.createElement("img")
+                                                                            imgNode.src = "https://i.ibb.co/RGS4pphj/hbMaster.png"
+                                                                            imgNode.style = "width: 35%; position: absolute; margin-top: -275px; margin-left: -5px; transform: rotateY(180deg); "
+
+
+                                                                            let dialogNode = document.createElement("div")
+                                                                            let pNode = document.createElement("p")
+                                                                            pNode.style = "font-size: 15px; margin-top: 10px; margin-left: 10px;"
+                                                                            dialogNode.style = "width: 15%; height: 135px; position: absolute;  margin-top: -420px; margin-left: 290px; background-color: #a1b0c2; border-radius: 10px;"
+                                                                            pNode.innerHTML = "Hi. I just told you a lot of things about The Merge. Now, I\'ll explain to you something new."
+                                                                            
+                                                                            let nextBtnn2 = document.createElement("button")
+                                                                             nextBtnn2.style = "width: 30%; height: 30px; position: absolute; margin-top: 125px; margin-left: 185px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                                                                             nextBtnn2.innerHTML +="NEXT"
+                                                                            
+                                                                             nextBtnn2.addEventListener("click", () => {
+                                                                                pNode.innerHTML = "I've already taught you the basic functions. step(), turnLeft(), turnRight(), turnUp(), turnDown()."
+                                                                                nextBtnn2.addEventListener("click", () => {
+                                                                                    pNode.innerHTML = "Now, you can write numbers inside the parentheses to indicate how many times does the function need to be executed. We'll call that number a parameter."
+                                                                                    nextBtnn2.addEventListener("click", () => {
+                                                                                     pNode.innerHTML = "We're entering a new city in the Never Realm, so you have to pass a code barrier. Your goal is to reach the scroll over there with maximum 6 lines of code."
+                                                                                    nextBtnn2.addEventListener("click", () => {
+                                                                                        pNode.innerHTML = "You'll use parameters in step(). For example, step(3) will make move 3 steps. Start off by clicking the green area to generate the map."
+                                                                                        nextBtnn2.innerHTML = "CLOSE"
+                                                                                        nextBtnn2.addEventListener("click", () => {
+                                                                                            dialogNode.remove();
+                                                                                            imgNode.remove();
+                                                                                        })
+                                                                                })
+                                                                                })
+                                                                            })
+                                                                            })
+                                                                            
+                                                                            dialogNode.appendChild(nextBtnn2)
+                                                                            dialogNode.appendChild(pNode)
+
+                                                                            document.body.appendChild(dialogNode)
+                                                                            document.body.appendChild(imgNode)
+                                                                            let amountsCellsAdd = 0
+                                                                            document.getElementById("map1").addEventListener("click", () => {
+                                                                                let currentPosition = 63
+                                                                                    if(amountsCellsAdd == 0) {
+                                                                                        for(let i = 0; i < 64; i++) {  
+                                                                                            let divNode = document.createElement("div")
+                                                                                            divNode.setAttribute("class", "backgroundCellDiv")
+                                                                                            if(i == 63) {
+                                                                                                divNode.innerHTML = `<img id="hbImg1" style="transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/v6gP0Ktf/hb.png">`
+                                                                                            }
+                                                                                            if( validValues.includes(i)) {
+                                                                                                divNode.setAttribute("class", "backgroundCellDiv")
+                                                                                            }
+                                                                                            if( i == 47) {
+                                                                                                divNode.innerHTML = `<img id="appleImg1" style="transform: scale(0.12); position: absolute; margin-left: -220px; margin-top: -212px; transition: all 0.2s ease;" alt="r" src="https://cdn-icons-png.flaticon.com/512/8194/8194907.png">`
+                                                                                            }
+                                                                                            let buglingDiv = [52, 53, 54, 55]
+                                                                                            if(buglingDiv.includes(i)) {
+                                                                                                divNode.innerHTML = `<img class="buglingImg" style="transform: scale(0.12); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/rGRJHNQB/bugling.png">`
+                                                                                            }
+                                                                                            map1.appendChild(divNode);
+                                                                                        }
+                                                                                    }
+                                                                                    amountsCellsAdd++
+                                                                            })
+                                                                        }, 700);
+                                                                        setTimeout(() => {
+                                                                            divNode.remove()
+                                                                        }, 1000); 
+                                                                    }, 2200);
+                                                                    })
+                                                                })
+                                                            })
+                                                        })
+                                                    })
+                                                })
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        }, 25);
+                    }, 450);
+                }, 5500);
+            }, 10);
+           
+        })
+        }, 3000);
+
+    }
+
+    function playLevel3() {
+
+let dialogNode = document.createElement("dialog")
+  dialogNode.style = "width: 35%; height: 145px; background-color: rgb(161, 176, 194); position: absolute; display: block; margin-top: 420px; margin-left: 505px; border-radius: 8px; box-shadow: black 5px 5px 25px;"
+  dialogNode.innerHTML = "<p style='color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 285px; position: absolute;  '> Badger</p>"
+  dialogNode.innerHTML += "<img style='width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; ' src='https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png' alt=''>"
+  dialogNode.innerHTML += "<p id='dialogText3' style='font-size: 19px; '> You did great! Let's take a look at the scroll you have just picked up.</p>"
+  dialogNode.innerHTML += "<button id='nextBtn3' style='background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black; font-size: 18px;  letter-spacing: 0.7px; margin-left: 20px;  margin-top: -45px; cursor: pointer; '> SEE</button>"
+  dialogNode.innerHTML += "<img style='position: absolute; margin-top: -350px; margin-left: -570px; transform: rotateY(180deg) scale(0.42); ' src='https://i.ibb.co/ZzW8Bmzt/hbImg2.png' alt='fassf'>"
+
+let divNode = document.createElement("div")
+    divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1s ease; opacity: 1;"
+    document.body.appendChild(divNode)
+    setTimeout(() => {
+        divNode.style.width = "100%"
+        divNode.style.height = "100%"
+    }, 100);
+    
+  setTimeout(() => {
+    divNode.style.opacity = "0"
+    setTimeout(() => {
+        divNode.remove()
+    }, 1000);
+  }, 2000);
+
+setTimeout(() => {
+    levelsDiv.style.display = "none";
+    document.body.style.backgroundImage = "url('https://img.freepik.com/premium-vector/vector-illustration-mountain-landscape-winter_719015-46.jpg')"
+   setTimeout(() => {
+    document.body.appendChild(dialogNode)
+   }, 450);
+
+}, 2000);
+
+setTimeout(() => {
+    nextBtn3.addEventListener("click", () => {
+        dialogNode.innerHTML = "<p style='color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 285px; position: absolute;  '> Badger</p>"
+        dialogNode.innerHTML += "<img style='width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; ' src='https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png' alt=''>"
+        dialogNode.innerHTML += "<p id='dialogText2' style='font-size: 19px; '> You did great! Let's take a look at the scroll you have just picked up.</p>"
+        dialogNode.innerHTML += "<img style='position: absolute; margin-top: -350px; margin-left: -560px; transform: rotateY(180deg) scale(0.42); ' src='https://i.ibb.co/ZzW8Bmzt/hbImg2.png' alt='fassf'>"
+
+    let imgNode = document.createElement("img")
+    imgNode.style = "width: 1%; position: absolute; margin-top: -75px; margin-left:225px; transition: all 0.4s ease;"
+    imgNode.src = "https://i.ibb.co/JRQ56rR5/scroll.png"
+    dialogNode.appendChild(imgNode)
+    setTimeout(() => {
+        imgNode.style.width = "100%"
+        imgNode.style.marginLeft = "-50px"
+        imgNode.style.marginTop = "-380px"
+        imgNode.style.transform = "scale(0.9)"
+        setTimeout(() => {
+            imgNode.style.transform = "scale(0.05) rotate(180deg)"
+            setTimeout(() => {
+                imgNode.remove()
+                dialogText2.textContent = "The scroll is written in Velithan, the first language ever. It's no longer spoken anywhere, but my master once taught me some of it.";
+                dialogNode.innerHTML += "<button id='nextBtn33' style='background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black;  font-size: 18px;  letter-spacing: 0.7px; margin-left: 10px; margin-top: 5px; transition: all 0.3s ease; cursor: pointer '> NEXT</button>"
+                 dialogText2.style.fontSize = "18px"
+                setTimeout(() => {
+                    nextBtn33.addEventListener("click", () => {
+                        dialogText2.textContent = "The scroll speaks of an ancient technique that gives you a new form. One that draws out abyssal energy from the land."
+                        nextBtn33.addEventListener("click", () => {
+                            dialogText2.textContent = 'It was once used at its maximum potential by the Source Dragons, thousands of years before The Merge, to purify realms touched by broken corrupted magic and this abyssal energy.'
+                            nextBtn33.addEventListener("click", () => {
+                                dialogText2.textContent = 'It seems this special technique has been lost in time. We\'re getting closer to our next realm; Mysterium - the realm of mystery and magic. In this realm, this odd energy is present almost everywhere, causing the closest realms borders since The Merge, to be affected.'
+                                nextBtn33.addEventListener("click", () => {
+                                    dialogText2.textContent = 'You need to perform a sequence of movements to access this form. You\'ll do it now.'
+                                    nextBtn33.innerHTML = "PERFORM"
+                                    nextBtn33.style = "background-color:transparent; color: white; width: 16%; height: 40px; border-radius: 8px; border: 1px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 18px;  letter-spacing: 0.7px; margin-left: 280px; margin-top: 25px; transition: all 0.3s ease; transform: scale(1.14); background-image: linear-gradient(to right, #B09F62, #B07E54, #987575); animation: gradient 2s infinite; background-size: 200%; cursor: pointer "
+                               
+                                    nextBtn33.addEventListener("click", () => {
+                                    level3DrainTechnique()
+                                    nextBtn33.remove()
+                                    let nextBtn333 = document.createElement("button")
+                                    nextBtn333.style = "background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black;  font-size: 18px;  letter-spacing: 0.7px; margin-left: 10px; margin-top: 5px; transition: all 0.3s ease; cursor: pointer"
+                                    nextBtn333.innerHTML = "NEXT"
+                                    dialogNode.appendChild(nextBtn333)
+                                    nextBtn333.addEventListener("click", () => {
+                                            dialogText2.textContent = 'One of my teammates is around this zone, he\'ll keep guiding you while I try to get you a full map of the merged realms.'
+                                            nextBtn333.addEventListener("click", () => {
+                                                dialogText2.textContent = 'But until we find him, I\'ll guide you.'
+                                                      nextBtn333.addEventListener("click", () => {
+                                                                dialogNode.remove()
+                                                                setTimeout(() => {
+                                                                    document.body.style.backgroundImage = "url('https://png.pngtree.com/background/20230412/original/pngtree-winter-night-snow-scene-illustration-background-picture-image_2397691.jpg')"
+                                                                     document.body.style.backgroundPositionY = "-120px"
+                                                                }, 1525);
+
+                                                                let divNode = document.createElement("div")
+                                                                divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1.5s ease; opacity: 1;"
+                                                                document.body.appendChild(divNode)
+                                                                setTimeout(() => {
+                                                                    divNode.style.width = "100%"
+                                                                    divNode.style.height = "100%"
+                                                                }, 100);
+                                                                
+                                                            setTimeout(() => {
+                                                                divNode.style.opacity = "0"
+                                                                setTimeout(() => {
+                                                                    fullContainer1.style.display = "grid"
+                                                                    userCurrentLevel.textContent = 3
+                                                                    addLineToCodeDrainBtn.style.display = "block"
+
+                                                                    let imgNode = document.createElement("img")
+                                                                    imgNode.src = "https://i.ibb.co/RGS4pphj/hbMaster.png"
+                                                                    imgNode.style = "width: 35%; position: absolute; margin-top: -275px; margin-left: -5px; transform: rotateY(180deg); "
+
+
+                                                                    let dialogNode = document.createElement("div")
+                                                                    let pNode = document.createElement("p")
+                                                                    pNode.style = "font-size: 15px; margin-top: 10px; margin-left: 10px;"
+                                                                    dialogNode.style = "width: 15%; height: 135px; position: absolute;  margin-top: -420px; margin-left: 290px; background-color: #a1b0c2; border-radius: 10px;"
+                                                                    pNode.innerHTML = "For this level, you\'re gonna use the drain() function, the one that you just learned."
+                                                                    
+                                                                    let nextBtnn3 = document.createElement("button")
+                                                                    nextBtnn3.style = "width: 30%; height: 30px; position: absolute; margin-top: 125px; margin-left: 185px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                                                                    nextBtnn3.innerHTML +="NEXT"
+                                                                    
+                                                                    nextBtnn3.addEventListener("click", () => {
+                                                                        pNode.innerHTML = "Use it to clear out corrupt energy from a specific zone to keep going on. To do so, first you need to step on the block with the corrupt energy, and then write drain() in the console. "
+                                                                        nextBtnn3.addEventListener("click", () => {
+                                                                            pNode.innerHTML = "You have 2 goals: 1) Reach the key in the bottom corner. 2) After obtaining the key, reach the cage over there, where my teammate is trapped."
+                                                                            nextBtnn3.addEventListener("click", () => {
+                                                                               pNode.innerHTML = "The max. lines you'll use is 8. Start off by clicking the green area. Good luck." 
+                                                                               nextBtnn3.addEventListener("click", () => {
+                                                                                dialogNode.remove()
+                                                                                imgNode.remove()                                                                        
+                                                                               })
+                                                                            })
+                                                                        })
+                                                                    })
+                                                                    
+                                                                    dialogNode.appendChild(nextBtnn3)
+                                                                    dialogNode.appendChild(pNode)
+
+                                                                    document.body.appendChild(dialogNode)
+                                                                    document.body.appendChild(imgNode)
+                                                                    let amountsCellsAdd = 0
+                                                                    document.getElementById("map1").addEventListener("click", () => {
+                                                                        let currentPosition = 63
+                                                                            if(amountsCellsAdd == 0) {
+                                                                                for(let i = 0; i < 64; i++) {  
+                                                                                    let divNode = document.createElement("div")
+                                                                                    divNode.setAttribute("class", "backgroundCellDiv")
+                                                                                    divNode.setAttribute("id", i)
+                                                                                    if(i == 63) {
+                                                                                        divNode.innerHTML = `<img id="hbImg1" style="transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/dwCZFXKc/hbGold.png">`
+                                                                                    }
+                                                                                    if(validValues.includes(i)) {
+                                                                                        divNode.setAttribute("class", "backgroundCellDiv")
+                                                                                    }
+                                                                                    if( i == 9) {
+                                                                                        divNode.innerHTML = `<img id="appleImg1" style="transform: scale(0.12); position: absolute; margin-left: -285.5px; margin-top: -277px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/M55z7jGP/cagePng.png">`
+                                                                                    }
+                                                                                    if(i == 56) {
+                                                                                        divNode.innerHTML = `<img id="appleImg2" style="transform: scale(0.12); position: absolute; margin-left: -220px; margin-top: -212px; transition: all 0.2s ease;" alt="r" src="https://cdn-icons-png.flaticon.com/512/4382/4382320.png">`
+                                                                                    }
+                                                                                    let buglingDiv = [61, 53, 54, 55]
+                                                                                    if(buglingDiv.includes(i)) {
+                                                                                        divNode.innerHTML = `<img class="buglingImg" style="transform: scale(0.095); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease; animation: corruptEnergyG 2s infinite;" alt="r" src="https://i.ibb.co/jk4n1ypY/corrupt-En.png">`
+                                                                                        divNode.style.backgroundColor = "#b33c62"
+                                                                                    }
+                                                                                    map1.appendChild(divNode);
+                                                                                }
+                                                                            }
+                                                                            amountsCellsAdd++
+                                                                    })
+                                                                }, 700);
+                                                                setTimeout(() => {
+                                                                    divNode.remove()
+                                                                }, 1000); 
+                                                            }, 2200);
+                                                            })      
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                }, 25);
+            }, 450);
+        }, 3500);
+    }, 10);
+   
+})
+}, 3000);
+
+}
+    function level3DrainTechnique() {
+
+        let blackOutDiv = document.createElement("div")
+        blackOutDiv.style = "width: 100%; height: 100%; position: absolute; background-color: rgb(0,0,0, 0.4)"
+        document.body.appendChild(blackOutDiv)
+
+        let dialogNode = document.createElement("dialog");
+        dialogNode.style = "width: 20%; height: 500px; background-color: #F7F7FD; border: 1px solid black; border-radius: 8px; display: grid; grid-template-rows: 3fr 1fr; box-shadow: black 2px 2px 21px 8px; margin-top: 250px; margin-left: 650px";
+
+        let sectionNode = document.createElement("section");
+        let articleNode = document.createElement("article");
+
+        sectionNode.style = "width: 100%; background-color: #DBDBDB";
+        sectionNode.innerHTML = "<div id='sectionPerformDiv' style='background-color: #7B21A0; border-radius: 100%; width: 5px; height: 5px; margin-left: 185px; margin-top: 185px; transition: 0.5s ease all; transform: scale(1);  z-index: 999'> </div>";
+
+        articleNode.style = "width: 100%; background-color: #C8C8C8;";
+        articleNode.innerHTML = "<div id='hoverPerformDiv' style='background-color: #71415B; border-radius: 100%; width: 100px; height: 100px; margin-left: 140px; margin-top: 15px; transition: 0.3s ease all; cursor: pointer;'> </div>";
+
+        document.body.appendChild(dialogNode);
+        dialogNode.appendChild(sectionNode);
+        dialogNode.appendChild(articleNode);
+
+        let isHolding = false;
+        let currentScale = 1;
+        const maxScale = 40;
+        const minScale = 4;
+
+        const div = document.getElementById("sectionPerformDiv");
+
+        let amountDragonLevel3 = 0
+        // Loop to update the scale based on holding state
+        setInterval(() => {
+
+            if (isHolding) {
+                if (currentScale < maxScale) {
+                    currentScale += 0.4;
+                }
+            } else {
+                if (currentScale > minScale) {
+                    currentScale -= 0.2;
+                }
+            }
+            let divScale = div.style.transform 
+            let divScaleNum = Number(divScale.split("(")[1].split(")")[0])
+            if(divScaleNum >= 39) {
+               
+                div.style.backgroundColor = "#E91E63"
+                setTimeout(() => {
+                    div.style.filter = "blur(60px)"
+                    setTimeout(() => {
+                        if(amountDragonLevel3 == 0) {
+                        articleNode.innerHTML += "<img style='transform: scale(0.2); margin-top: -550px; position: absolute; margin-left: -70px;' src='https://images.vexels.com/media/users/3/189569/isolated/preview/330af530d14f2f9db182f350565a855d-dragon-tribal-impresionante.png'>"
+                        }
+                        amountDragonLevel3++
+                        div.remove()
+
+                        setTimeout(() => {
+                            dialogText2.textContent = 'That was truly amazing. You have succesfully unlocked the new form. Now, let\'s keep going'
+                            dialogNode.remove()
+                            blackOutDiv.remove()
+                        }, 2500);
+                    }, 510);
+                }, 750);
+            }
+
+            div.style.transform = `scale(${currentScale.toFixed(2)})`;
+                
+        }, 30);
+
+        // Setup events after DOM elements are loaded
+        setTimeout(() => {
+            alert("Constantly click the bottom circle for the purple circle to gain mass")
+            const hoverDiv = document.getElementById("hoverPerformDiv");
+
+            hoverDiv.addEventListener("mousedown", () => {
+                isHolding = true;
+                div.style.filter = "blur(0px)"
+            });
+
+            document.addEventListener("mouseup", () => {
+                isHolding = false;
+                div.style.filter = "blur(0.8px)"
+            });
+        }, 50);
+
+    }
+
+    function playLevel4() {
+
+        let dialogNode = document.createElement("dialog")
+        dialogNode.style = "width: 35%; height: 145px; background-color: rgb(161, 176, 194); position: absolute; display: block; margin-top: 420px; margin-left: 505px; border-radius: 8px; box-shadow: black 5px 5px 25px;"
+        dialogNode.innerHTML = "<p id='badgerText' style='color: white; font-size: 22px; font-weight: 500; margin-top: -50px; margin-left: 285px; position: absolute;  '> Badger</p>"
+        dialogNode.innerHTML += "<img style='width: 105%; height: 100%; position: absolute; margin-top: -90px; margin-left: -40px; ' src='https://static.vecteezy.com/system/resources/thumbnails/027/187/944/small/gold-and-luxury-under-line-png.png' alt=''>"
+        dialogNode.innerHTML += "<p id='dialogText3' style='font-size: 19px; '> Well done! You've freed my teammate. From now on, he\'ll be your guide while I try to get you a full map of the merged realms. His name is Ashmane.</p>"
+        dialogNode.innerHTML += "<button id='nextBtn3' style='background-color: #4c6094ea; color: white; width: 16%; height: 40px; border-radius: 8px; border: 0px solid black; font-size: 18px;  letter-spacing: 0.7px; margin-left: 20px;  margin-top: 5px; cursor: pointer; z-index: 2 '> NEXT</button>"
+        dialogNode.innerHTML += "<img id='badgerImg' style='position: absolute; margin-top: -350px; margin-left: -570px; transform: rotateY(180deg) scale(0.42); ' src='https://i.ibb.co/ZzW8Bmzt/hbImg2.png' alt='fassf'>"
+
+        blackOutDiv()
+        
+        setTimeout(() => {
+            levelsDiv.style.display = "none";
+            document.body.style.backgroundImage = "url('https://png.pngtree.com/background/20230417/original/pngtree-winter-blue-snow-mountain-picture-image_2445628.jpg')"
+            document.body.appendChild(dialogNode)
+            nextBtn3.addEventListener("click", () => {
+                 dialogText3.textContent = "Goodbye. I hope we can meet again soon."
+                nextBtn3.addEventListener("click", () => {                  
+                    if(badgerImg.src != "https://i.ibb.co/gbx9S3jq/lion.png") {
+                        blackOutDiv()
+                    }
+                    badgerImg.src = "https://i.ibb.co/gbx9S3jq/lion.png"
+                    badgerImg.style.transform = "scale(0.5) rotateY(180deg)"
+                    badgerText.textContent = "Ashmane"
+                    badgerText.style.marginLeft = "280px"
+                    dialogText3.textContent = "Hey there! It's great to finally meet you. I'm the Lion of Fire, and I'll be traveling with you through all the realms to recover the Dragon Cores."
+                    nextBtn3.addEventListener("click", () => {
+                        dialogText3.textContent = "I've spent a long time studying the Source Dragons with your master and the rest of our team. We believe there's one core hidden in each realm… though someone else might've gotten to one already."
+                        nextBtn3.addEventListener("click", () => {
+                            dialogText3.textContent = "Since The Merge, the team's been scattered. I haven't seen any of them, just your master. "
+                            nextBtn3.addEventListener("click", () => {
+                                dialogText3.textContent = "We're approaching the last city in the Never Realm before we cross into another realm. Let's stay sharp… and keep moving."
+                                nextBtn3.addEventListener("click", () => {
+                                    nextBtn3.addEventListener("click", () => {
+                                            dialogNode.remove()
+                                            blackOutDiv()
+                                            setTimeout(() => {
+                                                document.body.style.backgroundImage = "url('https://png.pngtree.com/background/20230417/original/pngtree-winter-trees-figures-snow-picture-image_2445288.jpg')"
+                                                 document.body.style.backgroundPositionY = "-120px"
+                                            }, 1525);
+                                             setTimeout(() => {
+                                                 fullContainer1.style.display = "grid"
+                                                 userCurrentLevel.textContent = 4
+                                                 addLineToCodeDrainBtn.style.display = "block"
+
+                                                 let imgNode = document.createElement("img")
+                                                 imgNode.src = "https://i.ibb.co/Lz54hRWv/lion-Teach.png"
+                                                 imgNode.style = "width: 35%; position: absolute; margin-top: -525px; margin-left: -25px; transform: rotateY(180deg) scale(0.45); "
+
+
+                                                 let dialogNode = document.createElement("div")
+                                                 let pNode = document.createElement("p")
+                                                 pNode.style = "font-size: 15px; margin-top: 10px; margin-left: 10px;"
+                                                 dialogNode.style = "width: 15%; height: 135px; position: absolute;  margin-top: -420px; margin-left: 290px; background-color: #a1b0c2; border-radius: 10px;"
+                                                 pNode.innerHTML = "Here, you'll learn to use an if/else statement. We use 'if' when we want to do something only if a certain condition is true and 'else', when that condition isn't true."
+                                                 
+                                                 let nextBtnn4 = document.createElement("button")
+                                                 nextBtnn4.style = "width: 30%; height: 30px; position: absolute; margin-top: 125px; margin-left: 185px; background-color: #4c6094ea; color: white; border-radius: 8px; border: 0px solid black; font-family: 'Poppins', 'sans-serif'; font-size: 17px;  letter-spacing: 0.7px; cursor: pointer; "
+                                                 nextBtnn4.innerHTML +="NEXT"
+                                                 
+                                                 nextBtnn4.addEventListener("click", () => {
+                                                     pNode.innerHTML = "You write it like:  if(x == y){ step() } else { turnUp() }  /// If x=y, it will execute step. If x ≠ y, it will turn up. Inside the brackets, you always put 2 equal signs(==)." 
+                                                     nextBtnn4.addEventListener("click", () => {
+                                                        pNode.innerHTML = "You'll use if(...) {...} to check if the block is corrupted, and if it is, use the function drain and step"                                                        
+                                                         nextBtnn4.addEventListener("click", () => {
+                                                            pNode.innerHTML = "This time, there are corrupted blocks on the map, but their positions will change randomly every time you run your code."
+                                                            nextBtnn4.addEventListener("click", () => {
+                                                             pNode.innerHTML = "That means you can't rely on memorizing their spots, you need to check if each block is corrupted as you go. If you use drain() when it's not needed, your whole code won't work."
+                                                             nextBtnn4.addEventListener("click", () => {
+                                                                pNode.innerHTML = "Hint: the corrupted energy will appear randomly in one of the yellow blocks, you'll start like this: if(position == corrupted) {...}  else{ step() }. Start off by clciking the map"
+                                                                nextBtnn4.innerHTML = "CLOSE"
+                                                                nextBtnn4.addEventListener("click", () => {
+                                                                    dialogNode.remove()
+                                                                    imgNode.remove() 
+                                                                    textarea.textContent = "if(position == corrupted){" + "\n" + "start writing here" + "\n" + "}"
+                                                                })
+                                                             })                                                                       
+                                                            })
+                                                         })
+                                                     })
+                                                 })
+                                                 
+                                                 dialogNode.appendChild(nextBtnn4)
+                                                 dialogNode.appendChild(pNode)
+
+                                                 document.body.appendChild(dialogNode)
+                                                 document.body.appendChild(imgNode)
+                                                 let amountsCellsAdd = 0
+                                                 document.getElementById("map1").addEventListener("click", () => {
+                                                     let currentPosition = 63
+                                                    if(amountsCellsAdd == 0) {
+                                                     let yellowBlocks = [11, 19, 27, 35, 43]
+                                                     let energyRandom4 = yellowBlocks[parseInt(Math.random() * yellowBlocks.length)]
+
+                                                     for (let i = 0; i < 64; i++) {
+                                                        let divNode = document.createElement("div")
+                                                        divNode.setAttribute("class", "backgroundCellDiv")
+                                                        divNode.setAttribute("id", i)
+
+                                                        let wallDivs = [2, 4, 10, 12, 18, 20, 26, 28, 34, 36, 42, 44]
+                                                        if(wallDivs.includes(i)) {
+                                                            divNode.innerHTML ="<img style='transform: scale(0.15); position: absolute; margin-left: -223px; margin-top: -205px; transition: all 0.2s ease;' src='https://cdn-icons-png.flaticon.com/512/10809/10809503.png'>"
+                                                        }
+                                                        if (i == 51) {
+                                                            divNode.innerHTML = `<img id="hbImg1" style="transform: scale(0.15); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease;" alt="r" src="https://i.ibb.co/dwCZFXKc/hbGold.png">`
+                                                        }
+                                                        if (yellowBlocks.includes(i)) {
+                                                            divNode.style.backgroundColor = "#7ac273"
+                                                        }
+                                                        if (i == 3) {
+                                                            divNode.innerHTML = `<img id="appleImg2" style="transform: scale(0.12); position: absolute; margin-left: -220px; margin-top: -212px; transition: all 0.2s ease;" alt="r" src="https://cdn-icons-png.flaticon.com/512/4382/4382320.png">`
+                                                        }
+                                                        if (i == energyRandom4) {
+                                                            divNode.innerHTML = `<img class="buglingImg" style="transform: scale(0.095); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease; animation: corruptEnergyG 2s infinite;" alt="r" src="https://i.ibb.co/jk4n1ypY/corrupt-En.png">`
+                                                            divNode.style.backgroundColor = "#b33c62"
+                                                        }
+                                                        map1.appendChild(divNode)
+                                                    }
+
+                                                    // 🔽 Solo una vez, fuera del for
+                                                    runCodeBtn1.addEventListener("click", () => {
+                                                        // Limpiar el bloque anterior
+                                                        const oldBlock = document.getElementById(energyRandom4)
+                                                        oldBlock.innerHTML = ""
+                                                        oldBlock.style.backgroundColor = "#7ac273"
+
+                                                        // Generar nueva posición
+                                                        energyRandom4 = yellowBlocks[parseInt(Math.random() * yellowBlocks.length)]
+
+                                                        // Insertar imagen en nueva posición
+                                                        const newBlock = document.getElementById(energyRandom4)
+                                                        newBlock.innerHTML = `<img class="buglingImg" style="transform: scale(0.095); position: absolute; margin-left: -285px; margin-top: -275px; transition: all 0.2s ease; animation: corruptEnergyG 2s infinite;" alt="r" src="https://i.ibb.co/jk4n1ypY/corrupt-En.png">`
+                                                        newBlock.style.backgroundColor = "#b33c62"
+                                                    })
+
+                                                         }
+                                                         amountsCellsAdd++
+                                                 })
+                                             }, 700);
+                                     
+                                           })      
+
+                                })
+                            })
+                        })
+                    })
+             })
+        })
+
+        }, 2000);
+
+        
+        }
+
+
+        
+    function checkStorage() {
+    const level = parseInt(localStorage.getItem("userLevelCODING"))
+
+    if (level >= 2) {
+        playBtn2.disabled = false
+        playBtn2.style.filter = "brightness(100%)"
+        playBtn2.style.cursor = "pointer"
+    }
+    if (level >= 3) {
+        playBtn3.disabled = false
+        playBtn3.style.filter = "brightness(100%)"
+        playBtn3.style.cursor = "pointer"
+    }
+    // Add more levels if needed
+    if (level >= 4) {
+        playBtn4.disabled = false
+        playBtn4.style.filter = "brightness(100%)"
+        playBtn4.style.cursor = "pointer"
+    }
+    }
+    checkStorage()
+
+
+    function blackOutDiv() {
+        
+        let divNode = document.createElement("div")
+            divNode.style = "width: 2%; background-color: rgb(0,0,0,0.99); height: 2%; position: absolute; transition: all 1s ease; opacity: 1;"
+            document.body.appendChild(divNode)
+            setTimeout(() => {
+                divNode.style.width = "100%"
+                divNode.style.height = "100%"
+            }, 100);
+            
+        setTimeout(() => {
+            divNode.style.opacity = "0"
+            setTimeout(() => {
+                divNode.remove()
+            }, 1000);
+        }, 2000);
+
+    }
+
+
+  </script>
+</body>
+</html>
